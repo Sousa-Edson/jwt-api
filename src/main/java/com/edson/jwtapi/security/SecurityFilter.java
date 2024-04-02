@@ -1,5 +1,4 @@
-package com.edson.jwtapi.security;
-
+package com.edson.jwtapi.security; 
 
 import com.edson.jwtapi.repositories.UserRepository;
 import jakarta.servlet.FilterChain;
