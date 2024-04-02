@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController()
 @RequestMapping("product")
+@CrossOrigin(origins = "*")
 public class ProductController {
 
     @Autowired
@@ -27,7 +28,7 @@ public class ProductController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping
+    @GetMapping 
     public ResponseEntity getAllProducts(){
         List<ProductResponseDTO> productList = this.repository.findAll().stream().map(ProductResponseDTO::new).toList();
 

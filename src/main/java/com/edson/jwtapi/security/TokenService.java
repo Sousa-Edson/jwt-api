@@ -40,11 +40,12 @@ public class TokenService {
                     .verify(token)
                     .getSubject();
         } catch (JWTVerificationException exception){
-            return "";
+            throw new RuntimeException("Erro ao gerar o token", exception); 
         }
     }
 
     private Instant genExpirationDate(){
         return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
+        // return LocalDateTime.now().plusSeconds(10).toInstant(ZoneOffset.of("-03:00"));
     }
 }
