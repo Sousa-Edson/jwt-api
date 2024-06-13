@@ -26,6 +26,8 @@ public class User implements UserDetails {
     private String login;
     private String password;
 
+    private String name;
+
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
@@ -34,6 +36,14 @@ public class User implements UserDetails {
         this.password = password;
         this.role = role;
     }
+
+    public User(String login, String password, UserRole role,String name){
+        this.login = login;
+        this.password = password;
+        this.role = role;
+        this.name = name;
+    }
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
